@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify, g
 from sqlalchemy.exc import SQLAlchemyError
-
 from models import User, Note
 from database import Base, engine, Session
 from sqlalchemy import event
@@ -9,7 +8,7 @@ import jwt
 from functools import wraps
 
 app = Flask(__name__)
-app.secret_key = '<KEY>'
+app.secret_key = 'keykey'
 Base.metadata.create_all(engine)
 
 @app.before_request
