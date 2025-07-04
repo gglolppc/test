@@ -23,3 +23,10 @@ class Note(Base):
     title = Column(String, nullable=False)
     content = Column(String, nullable=True)
     user = relationship('User', back_populates='notes')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'content': self.title,
+            'user_id': self.content
+        }
