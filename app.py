@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 import os
 from database import Base, engine, Session
 from sqlalchemy import event
-
 from errors.exceptions import APIError
 from errors.handlers import register_error_handlers
 from routes.auth import auth
@@ -45,8 +44,5 @@ def handle_api_error(error):
 
 
 
-
-
-
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
