@@ -44,5 +44,5 @@ def handle_api_error(error):
 
 
 
-# if __name__ == '__main__':
-#     app.run()
+if __name__ == '__main__':
+    app.run()

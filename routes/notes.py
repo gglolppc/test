@@ -13,8 +13,9 @@ notes = Blueprint('notes', __name__)
 @check_token
 def add_note():
     try:
-        if not request.json:
-            raise APIError("No body found", status_code=400)
+        data = request.get_json(silent=True)
+        if not data:
+            raise APIError(message="Missing data", status_code=400)
         data = schema.load(request.json)
         title = data.get('title')
         content = data.get('content')
